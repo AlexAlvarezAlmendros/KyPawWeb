@@ -19,7 +19,7 @@ export const Footer = () => {
             <p className="text-gray-500 text-sm mb-6">
               El mejor compañero para el cuidado de tu mascota. Historial médico, recordatorios y más.
             </p>
-            <div className="flex gap-4">
+            {/* <div className="flex gap-4">
               <a href="#" className="text-gray-400 hover:text-primary transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
@@ -29,7 +29,7 @@ export const Footer = () => {
               <a href="mailto:soporte@kypaw.app" className="text-gray-400 hover:text-primary transition-colors">
                 <Mail className="w-5 h-5" />
               </a>
-            </div>
+            </div> */}
           </div>
 
           {/* Links */}
