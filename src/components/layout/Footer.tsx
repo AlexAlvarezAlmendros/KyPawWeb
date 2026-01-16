@@ -1,6 +1,6 @@
 import { Container } from '@/components/ui/Container';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
-import { Heart, Instagram, Twitter, Mail } from 'lucide-react';
+import { Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTheme } from '@/hooks/useTheme';
 

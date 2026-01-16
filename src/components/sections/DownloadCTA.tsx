@@ -1,5 +1,6 @@
 import { Container } from '@/components/ui/Container';
 import { ScrollReveal } from '@/components/animations/ScrollReveal';
+import { FloatingPhone } from '@/components/animations/FloatingPhone';
 import { motion } from 'framer-motion';
 
 // Apple Logo SVG Component (Official App Store style)
@@ -18,9 +19,10 @@ const GooglePlayLogo = ({ className }: { className?: string }) => (
 
 interface DownloadCTAProps {
   screenshotSrc?: string;
+  screenshotSrcDark?: string;
 }
 
-export const DownloadCTA = ({ screenshotSrc }: DownloadCTAProps) => {
+export const DownloadCTA = ({ screenshotSrc, screenshotSrcDark }: DownloadCTAProps) => {
   return (
     <section id="download" className="py-24 relative overflow-hidden">
       {/* Background Gradient */}
@@ -81,79 +83,15 @@ export const DownloadCTA = ({ screenshotSrc }: DownloadCTAProps) => {
             </ScrollReveal>
           </div>
 
-          {/* Visual Content - Hand holding phone mockup */}
+          {/* Visual Content - Phone mockup */}
           <div className="lg:w-1/2 flex justify-center">
-            <ScrollReveal direction="up" delay={0.2} className="relative">
-              {/* Phone Mockup */}
-              <motion.div 
-                animate={{ y: [-10, 10, -10] }}
-                transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-                className="relative z-10 w-[280px] sm:w-[320px] aspect-[9/18] bg-gray-900 rounded-[3rem] p-3 shadow-2xl border-4 border-gray-800"
-              >
-                  <div className="w-full h-full bg-white rounded-[2.5rem] overflow-hidden bg-gradient-to-b from-primary-50 to-white relative">
-                     {/* Notch */}
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-black rounded-b-2xl z-20" />
-                    
-                    {/* Screen Content Container */}
-                    <img 
-                      src={screenshotSrc || "/img/perfil.png"} 
-                      alt="KyPaw App" 
-                      className="w-full h-full object-cover relative z-10"
-                      onError={(e) => {
-                        e.currentTarget.style.display = 'none';
-                        e.currentTarget.nextElementSibling?.classList.remove('hidden');
-                      }}
-                    />
-
-                    {/* Abstract App UI (Fallback) */}
-                    <div className="hidden absolute inset-0 p-6 pt-16 flex flex-col gap-4 h-full bg-gradient-to-b from-primary-50 to-white">
-                        {/* Header */}
-                        <div className="flex justify-between items-center mb-2">
-                          <div className="w-8 h-8 rounded-full bg-primary-100" />
-                          <div className="w-24 h-4 rounded-full bg-gray-100" />
-                        </div>
-                        
-                        {/* Card 1 */}
-                        <div className="bg-white p-4 rounded-2xl shadow-sm border border-gray-100">
-                           <div className="flex gap-3 items-center mb-3">
-                             <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">🐾</div>
-                             <div className="space-y-1">
-                               <div className="w-20 h-4 rounded-full bg-gray-100" />
-                               <div className="w-12 h-3 rounded-full bg-gray-50" />
-                             </div>
-                           </div>
-                           <div className="w-full h-2 rounded-full bg-blue-50">
-                             <div className="w-2/3 h-full rounded-full bg-blue-500" />
-                           </div>
-                        </div>
-
-                        {/* Card 2 */}
-                        <div className="bg-primary-500 p-5 rounded-2xl shadow-lg shadow-primary-500/30 text-white mt-2">
-                           <div className="text-2xl font-bold mb-1">Max</div>
-                           <div className="text-primary-100 text-sm mb-4">Golden Retriever</div>
-                           <div className="flex gap-2">
-                              <div className="px-3 py-1 rounded-full bg-white/20 text-xs">Vacunas</div>
-                              <div className="px-3 py-1 rounded-full bg-white/20 text-xs">Peso</div>
-                           </div>
-                        </div>
-
-                        {/* List */}
-                        <div className="space-y-3 mt-2">
-                          {[1, 2, 3].map(i => (
-                            <div key={i} className="flex items-center gap-3">
-                               <div className="w-8 h-8 rounded-lg bg-gray-50" />
-                               <div className="flex-1 h-3 rounded-full bg-gray-100" />
-                            </div>
-                          ))}
-                        </div>
-
-                        {/* Button */}
-                        <div className="absolute bottom-6 left-6 right-6">
-                            <div className="w-full h-12 rounded-xl bg-gray-900 shadow-lg" />
-                        </div>
-                      </div>
-                  </div>
-              </motion.div>
+            <ScrollReveal direction="up" delay={0.2}>
+              <FloatingPhone
+                screenshotSrc={screenshotSrc || "/img/perfil.png"}
+                screenshotSrcDark={screenshotSrcDark || "/img/perfiloscuro.png"}
+                size="md"
+                glowColor="bg-white/20"
+              />
             </ScrollReveal>
           </div>
         </div>

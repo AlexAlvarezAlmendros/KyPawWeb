@@ -2,7 +2,7 @@ import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
 import { FloatingPhone } from '@/components/animations/FloatingPhone';
 import { motion } from 'framer-motion';
-import { ArrowRight, Star } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export const HeroSection = () => {
   return (
@@ -52,7 +52,11 @@ export const HeroSection = () => {
 
           {/* Visual Content */}
           <div className="relative mx-auto lg:ml-auto w-full max-w-sm lg:max-w-md">
-            <FloatingPhone screenshotSrc="/img/agenda.png" />
+            <FloatingPhone 
+              screenshotSrc="/img/agenda.png" 
+              screenshotSrcDark="/img/agendaoscuro.png"
+              size="lg"
+            />
             
             {/* Floating Badges */}
             <motion.div 

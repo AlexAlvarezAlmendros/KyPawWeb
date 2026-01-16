@@ -7,6 +7,7 @@ import { FeaturesSection } from '@/components/sections/FeaturesSection';
 import { AppShowcase } from '@/components/sections/AppShowcase';
 import { FAQSection } from '@/components/sections/FAQSection';
 import { DownloadCTA } from '@/components/sections/DownloadCTA';
+import { SupportSection } from '@/components/sections/SupportSection';
 
 const HomePage = () => {
   return (
@@ -20,6 +21,7 @@ const HomePage = () => {
         <AppShowcase />
         <DownloadCTA />
         <FAQSection />
+        <SupportSection />
       </main>
 
       <Footer />
