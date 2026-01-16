@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Clock, ChevronRight } from 'lucide-react';
-import { Tutorial } from '@/constants/tutorials';
+import { type Tutorial } from '@/constants/tutorials';
 
 interface TutorialCardProps {
   tutorial: Tutorial;

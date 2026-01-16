@@ -1,7 +1,7 @@
 // src/components/animations/ScrollReveal.tsx
 
 import { motion, useInView } from 'framer-motion';
-import { useRef, ReactNode } from 'react';
+import { useRef, type ReactNode } from 'react';
 
 interface ScrollRevealProps {
   children: ReactNode;
