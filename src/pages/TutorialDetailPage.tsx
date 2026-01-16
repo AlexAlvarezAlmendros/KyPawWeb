@@ -43,7 +43,7 @@ const TutorialDetailPage = () => {
       />
       <Header />
 
-      <main className="flex-grow">
+      <main className="flex-grow pt-20">
         {/* Breadcrumb */}
         <div className="bg-white border-b border-gray-100">
           <Container>

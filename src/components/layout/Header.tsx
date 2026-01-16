@@ -17,8 +17,8 @@ export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
   
-  // Check if we're on a page with dark hero (like tutorials)
-  const hasDarkHero = location.pathname.startsWith('/tutoriales');
+  // Check if we're on a page with dark hero (only tutorials listing page, not detail)
+  const hasDarkHero = location.pathname === '/tutoriales';
 
   useEffect(() => {
     const handleScroll = () => {
