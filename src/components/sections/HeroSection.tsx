@@ -52,7 +52,7 @@ export const HeroSection = () => {
 
           {/* Visual Content */}
           <div className="relative mx-auto lg:ml-auto w-full max-w-sm lg:max-w-md">
-            <FloatingPhone />
+            <FloatingPhone screenshotSrc="/img/agenda.png" />
             
             {/* Floating Badges */}
             <motion.div 

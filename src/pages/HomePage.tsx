@@ -2,7 +2,11 @@ import React from 'react';
 import { SEO } from '@/components/SEO';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { HeroSection } from '@/components/sections/HeroSection';
 import { FeaturesSection } from '@/components/sections/FeaturesSection';
+import { AppShowcase } from '@/components/sections/AppShowcase';
+import { FAQSection } from '@/components/sections/FAQSection';
+import { DownloadCTA } from '@/components/sections/DownloadCTA';
 
 const HomePage = () => {
   return (
@@ -13,13 +17,9 @@ const HomePage = () => {
       <main className="flex-grow">
         <HeroSection />
         <FeaturesSection />
-        
-        {/* Placeholder para siguientes secciones */}
-        <section id="download" className="py-20 bg-primary text-white">
-           <div className="container mx-auto px-4 text-center">
-            Download Section (Próximamente)
-          </div>
-        </section>
+        <AppShowcase />
+        <DownloadCTA />
+        <FAQSection />
       </main>
 
       <Footer />
