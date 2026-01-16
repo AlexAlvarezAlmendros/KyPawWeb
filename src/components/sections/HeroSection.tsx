@@ -51,7 +51,7 @@ export const HeroSection = () => {
           </div>
 
           {/* Visual Content */}
-          <div className="relative mx-auto lg:ml-auto w-full max-w-sm lg:max-w-md">
+          <div className="relative flex justify-center lg:justify-end w-full max-w-sm lg:max-w-md mx-auto lg:mx-0 lg:ml-auto">
             <FloatingPhone 
               screenshotSrc="/img/agenda.png" 
               screenshotSrcDark="/img/agendaoscuro.png"
