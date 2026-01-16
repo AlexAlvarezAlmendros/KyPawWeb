@@ -10,7 +10,7 @@ const screenshots = [
     title: "Tu día a día",
     description: "Visualiza de un vistazo todas las tareas, citas y recordatorios pendientes para hoy.",
     color: "from-blue-500 to-cyan-400",
-    bg: "bg-blue-50",
+    bg: "bg-blue-50 dark:bg-blue-950/30",
     src: "/img/agenda.png"
   },
   {
@@ -18,7 +18,7 @@ const screenshots = [
     title: "Perfil Digital",
     description: "Toda la información de tu mascota: chip, peso, edad y datos importantes siempre a mano.",
     color: "from-purple-500 to-pink-500",
-    bg: "bg-purple-50",
+    bg: "bg-purple-50 dark:bg-purple-950/30",
     src: "/img/perfil.png"
   },
   {
@@ -26,7 +26,7 @@ const screenshots = [
     title: "Historial Médico",
     description: "Consulta visitas pasadas, diagnósticos y tratamientos cronológicamente.",
     color: "from-green-500 to-emerald-400",
-    bg: "bg-green-50",
+    bg: "bg-green-50 dark:bg-green-950/30",
     src: "/img/historial.png"
   },
   {
@@ -34,7 +34,7 @@ const screenshots = [
     title: "Recordatorios",
     description: "Nunca más olvidarás una pastilla o desparasitación. Alertas personalizables.",
     color: "from-orange-500 to-yellow-400",
-    bg: "bg-orange-50",
+    bg: "bg-orange-50 dark:bg-orange-950/30",
     src: "/img/calendario.png"
   },
   {
@@ -42,7 +42,7 @@ const screenshots = [
     title: "Paseos en Tiempo Real",
     description: "Registra la ruta, distancia y duración de cada paseo. ¡Mantén a tu peludo activo!",
     color: "from-indigo-500 to-primary",
-    bg: "bg-indigo-50",
+    bg: "bg-indigo-50 dark:bg-indigo-950/30",
     src: "/img/paseo.png"
   }
 ];
@@ -91,10 +91,10 @@ export const AppShowcase = () => {
           {/* Content Side */}
           <div className="order-2 lg:order-1">
             <ScrollReveal direction="left">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 transition-all duration-500">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6 transition-all duration-500">
                 {activeScreenshot.title}
               </h2>
-              <p className="text-xl text-gray-600 mb-8 h-24">
+              <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 h-24">
                 {activeScreenshot.description}
               </p>
               
@@ -102,10 +102,10 @@ export const AppShowcase = () => {
               <div className="flex items-center gap-6 mb-12">
                 <button 
                   onClick={handlePrev}
-                  className="p-3 rounded-full bg-white shadow-md hover:bg-gray-50 transition-colors"
+                  className="p-3 rounded-full bg-white dark:bg-gray-800 shadow-md hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
                   aria-label="Anterior"
                 >
-                  <ChevronLeft className="w-6 h-6 text-gray-600" />
+                  <ChevronLeft className="w-6 h-6 text-gray-600 dark:text-gray-300" />
                 </button>
                 
                 <div className="flex gap-3">
@@ -115,8 +115,8 @@ export const AppShowcase = () => {
                       onClick={() => handleDotClick(index)}
                       className={`h-2.5 rounded-full transition-all duration-300 ${
                         index === currentIndex 
-                          ? `w-8 bg-gray-800` 
-                          : "w-2.5 bg-gray-300 hover:bg-gray-400"
+                          ? `w-8 bg-gray-800 dark:bg-white` 
+                          : "w-2.5 bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500"
                       }`}
                       aria-label={`Ir a pantalla ${index + 1}`}
                     />
@@ -125,10 +125,10 @@ export const AppShowcase = () => {
 
                 <button 
                   onClick={handleNext}
-                  className="p-3 rounded-full bg-white shadow-md hover:bg-gray-50 transition-colors"
+                  className="p-3 rounded-full bg-white dark:bg-gray-800 shadow-md hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
                   aria-label="Siguiente"
                 >
-                  <ChevronRight className="w-6 h-6 text-gray-600" />
+                  <ChevronRight className="w-6 h-6 text-gray-600 dark:text-gray-300" />
                 </button>
               </div>
             </ScrollReveal>

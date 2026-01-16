@@ -10,7 +10,7 @@ import { DownloadCTA } from '@/components/sections/DownloadCTA';
 
 const HomePage = () => {
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="min-h-screen bg-background dark:bg-gray-900 flex flex-col">
       <SEO />
       <Header />
       

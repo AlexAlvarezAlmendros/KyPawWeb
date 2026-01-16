@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const TermsPage = () => {
   return (
-    <div className="min-h-screen bg-white flex flex-col">
+    <div className="min-h-screen bg-white dark:bg-gray-900 flex flex-col">
       <SEO 
         title="Términos y Condiciones - KyPaw"
         description="Lee los términos y condiciones de uso de la aplicación KyPaw para la gestión del cuidado de mascotas."
@@ -16,17 +16,17 @@ const TermsPage = () => {
       <main className="flex-grow pt-32 pb-16">
         <Container>
           <div className="max-w-3xl mx-auto">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Términos y Condiciones
             </h1>
-            <p className="text-gray-500 mb-8">
+            <p className="text-gray-500 dark:text-gray-400 mb-8">
               Última actualización: 16 de enero de 2026
             </p>
 
-            <div className="prose prose-gray max-w-none">
+            <div className="prose prose-gray dark:prose-invert max-w-none">
               <section className="mb-10">
-                <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Aceptación de los Términos</h2>
-                <p className="text-gray-600 mb-4">
+                <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">1. Aceptación de los Términos</h2>
+                <p className="text-gray-600 dark:text-gray-300 mb-4">
                   Bienvenido a KyPaw. Al descargar, instalar o utilizar nuestra aplicación móvil y/o sitio web ("Servicio"), aceptas quedar vinculado por estos Términos y Condiciones ("Términos"). Si no estás de acuerdo con alguna parte de estos términos, no podrás acceder al Servicio.
                 </p>
                 <p className="text-gray-600">

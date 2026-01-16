@@ -42,14 +42,14 @@ const faqs = [
 
 export const FAQSection = () => {
   return (
-    <section id="faq" className="py-24 bg-gray-50">
+    <section id="faq" className="py-24 bg-gray-50 dark:bg-gray-900/50">
       <Container>
         <div className="text-center max-w-2xl mx-auto mb-16">
           <ScrollReveal direction="up">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Preguntas Frecuentes
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-600 dark:text-gray-300">
               Resolvemos tus dudas principales para que empieces a cuidar a tu mascota sin preocupaciones.
             </p>
           </ScrollReveal>
@@ -66,15 +66,15 @@ export const FAQSection = () => {
               >
                 <AccordionItem 
                   value={`item-${index}`} 
-                  className="bg-white border border-gray-100 rounded-xl px-2 shadow-sm data-[state=open]:shadow-md data-[state=open]:border-primary/20 transition-all duration-300"
+                  className="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-xl px-2 shadow-sm data-[state=open]:shadow-md data-[state=open]:border-primary/20 transition-all duration-300"
                 >
                   <AccordionTrigger className="px-4 py-4 hover:no-underline text-left">
-                    <span className="flex items-center gap-4 text-lg font-medium text-gray-900">
-                      <span className="text-2xl bg-gray-50 p-2 rounded-lg">{faq.icon}</span>
+                    <span className="flex items-center gap-4 text-lg font-medium text-gray-900 dark:text-white">
+                      <span className="text-2xl bg-gray-50 dark:bg-gray-700 p-2 rounded-lg">{faq.icon}</span>
                       {faq.question}
                     </span>
                   </AccordionTrigger>
-                  <AccordionContent className="px-4 pb-4 pl-[4.5rem] text-gray-600 leading-relaxed text-base">
+                  <AccordionContent className="px-4 pb-4 pl-[4.5rem] text-gray-600 dark:text-gray-300 leading-relaxed text-base">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>

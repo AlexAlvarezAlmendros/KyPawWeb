@@ -5,7 +5,7 @@ import { Container } from '@/components/ui/Container';
 
 const PrivacyPage = () => {
   return (
-    <div className="min-h-screen bg-white flex flex-col">
+    <div className="min-h-screen bg-white dark:bg-gray-900 flex flex-col">
       <SEO 
         title="Política de Privacidad - KyPaw"
         description="Conoce cómo KyPaw protege y gestiona tus datos personales y la información de tus mascotas."
@@ -15,17 +15,17 @@ const PrivacyPage = () => {
       <main className="flex-grow pt-32 pb-16">
         <Container>
           <div className="max-w-3xl mx-auto">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Política de Privacidad
             </h1>
-            <p className="text-gray-500 mb-8">
+            <p className="text-gray-500 dark:text-gray-400 mb-8">
               Última actualización: 16 de enero de 2026
             </p>
 
-            <div className="prose prose-gray max-w-none">
+            <div className="prose prose-gray dark:prose-invert max-w-none">
               <section className="mb-10">
-                <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Introducción</h2>
-                <p className="text-gray-600 mb-4">
+                <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">1. Introducción</h2>
+                <p className="text-gray-600 dark:text-gray-300 mb-4">
                   En KyPaw ("nosotros", "nuestro" o "la App"), nos comprometemos a proteger tu privacidad y la de tus mascotas. Esta Política de Privacidad explica cómo recopilamos, usamos, almacenamos y protegemos tu información personal cuando utilizas nuestra aplicación móvil y sitio web.
                 </p>
                 <p className="text-gray-600">

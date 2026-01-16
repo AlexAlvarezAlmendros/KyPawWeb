@@ -6,11 +6,11 @@ import { ArrowRight, Star } from 'lucide-react';
 
 export const HeroSection = () => {
   return (
-    <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-background">
+    <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-background dark:bg-gray-900">
       {/* Background Decor */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
-         <div className="absolute -top-[20%] -right-[10%] w-[70%] h-[70%] rounded-full bg-primary/5 blur-[100px]" />
-         <div className="absolute top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-secondary/5 blur-[80px]" />
+         <div className="absolute -top-[20%] -right-[10%] w-[70%] h-[70%] rounded-full bg-primary/5 dark:bg-primary/10 blur-[100px]" />
+         <div className="absolute top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-secondary/5 dark:bg-secondary/10 blur-[80px]" />
       </div>
 
       <Container>
@@ -27,14 +27,14 @@ export const HeroSection = () => {
                 4.8 en App Store
               </div> */}
               
-              <h1 className="text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-6 leading-[1.1]">
+              <h1 className="text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 dark:text-white mb-6 leading-[1.1]">
                 El mejor compañero para cuidar a tu{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
                   mascota
                 </span>
               </h1>
               
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 Historial médico, recordatorios y cuidados. Todo en una sola app diseñada para amantes de los animales.
               </p>
               
@@ -56,35 +56,35 @@ export const HeroSection = () => {
             
             {/* Floating Badges */}
             <motion.div 
-              className="absolute -right-4 top-1/4 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 hidden sm:block"
+              className="absolute -right-4 top-1/4 bg-white dark:bg-gray-800 p-4 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 hidden sm:block"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.5, duration: 0.5 }}
             >
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
                   <span className="text-xl">💉</span>
                 </div>
                 <div>
-                  <p className="text-xs text-gray-500 font-medium">Próxima Vacuna</p>
-                  <p className="text-sm font-bold text-gray-900">Mañana</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 font-medium">Próxima Vacuna</p>
+                  <p className="text-sm font-bold text-gray-900 dark:text-white">Mañana</p>
                 </div>
               </div>
             </motion.div>
 
             <motion.div 
-              className="absolute -left-8 bottom-1/4 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 hidden sm:block"
+              className="absolute -left-8 bottom-1/4 bg-white dark:bg-gray-800 p-4 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 hidden sm:block"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.7, duration: 0.5 }}
             >
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
                   <span className="text-xl">🐾</span>
                 </div>
                 <div>
-                  <p className="text-xs text-gray-500 font-medium">Paseo Diario</p>
-                  <p className="text-sm font-bold text-gray-900">Completado</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 font-medium">Paseo Diario</p>
+                  <p className="text-sm font-bold text-gray-900 dark:text-white">Completado</p>
                 </div>
               </div>
             </motion.div>

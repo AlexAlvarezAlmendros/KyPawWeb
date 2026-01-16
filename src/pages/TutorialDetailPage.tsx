@@ -36,7 +36,7 @@ const TutorialDetailPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex flex-col">
       <SEO 
         title={`${tutorial.title} - Tutoriales KyPaw`}
         description={tutorial.description}
@@ -45,31 +45,31 @@ const TutorialDetailPage = () => {
 
       <main className="flex-grow pt-20">
         {/* Breadcrumb */}
-        <div className="bg-white border-b border-gray-100">
+        <div className="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
           <Container>
             <nav className="py-4 flex items-center gap-2 text-sm">
-              <Link to="/tutoriales" className="text-gray-500 hover:text-primary transition-colors">
+              <Link to="/tutoriales" className="text-gray-500 dark:text-gray-400 hover:text-primary transition-colors">
                 Tutoriales
               </Link>
               <ChevronRight className="w-4 h-4 text-gray-400" />
               <Link 
                 to={`/tutoriales?category=${tutorial.category}`} 
-                className="text-gray-500 hover:text-primary transition-colors"
+                className="text-gray-500 dark:text-gray-400 hover:text-primary transition-colors"
               >
                 {category?.name}
               </Link>
               <ChevronRight className="w-4 h-4 text-gray-400" />
-              <span className="text-gray-900 font-medium">{tutorial.title}</span>
+              <span className="text-gray-900 dark:text-white font-medium">{tutorial.title}</span>
             </nav>
           </Container>
         </div>
 
         {/* Tutorial Header */}
-        <section className="bg-white py-10 md:py-14 border-b border-gray-100">
+        <section className="bg-white dark:bg-gray-800 py-10 md:py-14 border-b border-gray-100 dark:border-gray-700">
           <Container>
             <Link 
               to="/tutoriales"
-              className="inline-flex items-center gap-2 text-gray-500 hover:text-primary mb-6 transition-colors"
+              className="inline-flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-primary mb-6 transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>Volver a tutoriales</span>
@@ -80,24 +80,24 @@ const TutorialDetailPage = () => {
                 {tutorial.categoryIcon}
               </div>
               <div>
-                <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+                <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3">
                   {tutorial.title}
                 </h1>
-                <p className="text-lg text-gray-600">
+                <p className="text-lg text-gray-600 dark:text-gray-300">
                   {tutorial.description}
                 </p>
               </div>
             </div>
 
             <div className="flex flex-wrap items-center gap-4">
-              <div className="flex items-center gap-2 text-gray-500">
+              <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400">
                 <Clock className="w-5 h-5" />
                 <span>{tutorial.duration} de lectura</span>
               </div>
               <span className={`px-3 py-1 rounded-full text-sm font-medium ${difficultyColors[tutorial.difficulty]}`}>
                 {tutorial.difficulty}
               </span>
-              <span className="px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-600">
+              <span className="px-3 py-1 rounded-full text-sm font-medium bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300">
                 {tutorial.steps.length} pasos
               </span>
             </div>
@@ -112,7 +112,7 @@ const TutorialDetailPage = () => {
                 {tutorial.steps.map((step, index) => (
                   <div 
                     key={index}
-                    className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-gray-100"
+                    className="bg-white dark:bg-gray-800 rounded-2xl p-6 md:p-8 shadow-sm border border-gray-100 dark:border-gray-700"
                   >
                     <div className="flex items-start gap-4">
                       {/* Step Number */}
@@ -121,17 +121,17 @@ const TutorialDetailPage = () => {
                       </div>
 
                       <div className="flex-1">
-                        <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                        <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
                           {step.title}
                         </h3>
                         
-                        <p className="text-gray-600 leading-relaxed">
+                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                           {step.description}
                         </p>
 
                         {/* Image placeholder */}
                         {step.image && (
-                          <div className="mt-4 rounded-xl overflow-hidden border border-gray-100">
+                          <div className="mt-4 rounded-xl overflow-hidden border border-gray-100 dark:border-gray-700">
                             <img 
                               src={step.image} 
                               alt={step.title}
@@ -142,10 +142,10 @@ const TutorialDetailPage = () => {
 
                         {/* Tip Box */}
                         {step.tip && (
-                          <div className="mt-4 p-4 bg-primary/5 border border-primary/10 rounded-xl">
+                          <div className="mt-4 p-4 bg-primary/5 dark:bg-primary/10 border border-primary/10 dark:border-primary/20 rounded-xl">
                             <div className="flex items-start gap-3">
                               <span className="text-xl">💡</span>
-                              <p className="text-sm text-gray-700">
+                              <p className="text-sm text-gray-700 dark:text-gray-300">
                                 <span className="font-semibold">Consejo: </span>
                                 {step.tip}
                               </p>

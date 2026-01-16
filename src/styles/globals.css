@@ -1,3 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 249 250 251; /* gray-50 */
+    --foreground: 17 24 39; /* gray-900 */
+    --surface: 255 255 255;
+    --surface-hover: 243 244 246; /* gray-100 */
+    --border: 229 231 235; /* gray-200 */
+  }
+
+  .dark {
+    --background: 17 24 39; /* gray-900 */
+    --foreground: 249 250 251; /* gray-50 */
+    --surface: 31 41 55; /* gray-800 */
+    --surface-hover: 55 65 81; /* gray-700 */
+    --border: 55 65 81; /* gray-700 */
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-gray-900 dark:text-gray-100 antialiased;
+  }
+}
+
+/* Smooth transitions for theme switching */
+* {
+  transition-property: background-color, border-color;
+  transition-duration: 150ms;
+  transition-timing-function: ease-in-out;
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -8,18 +8,18 @@ interface TutorialCardProps {
 
 export const TutorialCard = ({ tutorial }: TutorialCardProps) => {
   const difficultyColors = {
-    'Fácil': 'bg-green-100 text-green-700',
-    'Medio': 'bg-yellow-100 text-yellow-700',
-    'Avanzado': 'bg-red-100 text-red-700'
+    'Fácil': 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400',
+    'Medio': 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400',
+    'Avanzado': 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400'
   };
 
   return (
     <Link 
       to={`/tutoriales/${tutorial.slug}`}
-      className="group block bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:border-primary/20 transition-all duration-300 overflow-hidden"
+      className="group block bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-lg hover:border-primary/20 dark:hover:border-primary/40 transition-all duration-300 overflow-hidden"
     >
       {/* Thumbnail area */}
-      <div className="relative h-32 bg-gradient-to-br from-primary/5 to-secondary/5 flex items-center justify-center">
+      <div className="relative h-32 bg-gradient-to-br from-primary/5 to-secondary/5 dark:from-primary/10 dark:to-secondary/10 flex items-center justify-center">
         <span className="text-5xl">{tutorial.categoryIcon}</span>
         
         {/* Category Badge */}
@@ -32,16 +32,16 @@ export const TutorialCard = ({ tutorial }: TutorialCardProps) => {
 
       {/* Content */}
       <div className="p-5">
-        <h3 className="font-semibold text-gray-900 mb-2 group-hover:text-primary transition-colors line-clamp-2">
+        <h3 className="font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-primary transition-colors line-clamp-2">
           {tutorial.title}
         </h3>
         
-        <p className="text-sm text-gray-500 mb-4 line-clamp-2">
+        <p className="text-sm text-gray-500 dark:text-gray-400 mb-4 line-clamp-2">
           {tutorial.description}
         </p>
 
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-1 text-gray-400 text-sm">
+          <div className="flex items-center gap-1 text-gray-400 dark:text-gray-500 text-sm">
             <Clock className="w-4 h-4" />
             <span>{tutorial.duration}</span>
           </div>
