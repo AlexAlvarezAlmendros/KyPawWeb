@@ -56,6 +56,23 @@ export const AppShowcase = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
+  // Preload all images on mount
+  useEffect(() => {
+    const preloadImages = () => {
+      screenshots.forEach((screenshot) => {
+        // Preload light version
+        const imgLight = new Image();
+        imgLight.src = screenshot.src;
+        
+        // Preload dark version
+        const imgDark = new Image();
+        imgDark.src = screenshot.srcDark;
+      });
+    };
+    
+    preloadImages();
+  }, []);
+
   useEffect(() => {
     if (!isAutoPlaying) return;
 
