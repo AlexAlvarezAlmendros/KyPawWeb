@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Download } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
@@ -15,6 +15,10 @@ const navigation = [
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  
+  // Check if we're on a page with dark hero (like tutorials)
+  const hasDarkHero = location.pathname.startsWith('/tutoriales');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +27,9 @@ export const Header = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Determine text color based on scroll and page
+  const shouldUseWhiteText = hasDarkHero && !isScrolled;
 
   return (
     <header
@@ -33,10 +40,15 @@ export const Header = () => {
     >
       <Container>
         <nav className="flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 z-50">
-            <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              KyPaw
-            </span>
+          <Link to="/" className="flex items-center z-50">
+            <img 
+              src="/img/logotipoclaro.png" 
+              alt="KyPaw - Cuida. Organiza. Recuerda." 
+              className={cn(
+                "h-8 w-auto transition-all",
+                shouldUseWhiteText && "brightness-0 invert"
+              )}
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -45,12 +57,22 @@ export const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium text-gray-600 hover:text-primary transition-colors"
+                className={cn(
+                  "text-sm font-medium transition-colors",
+                  shouldUseWhiteText 
+                    ? "text-white/90 hover:text-white" 
+                    : "text-gray-600 hover:text-primary"
+                )}
               >
                 {item.name}
               </a>
             ))}
-            <Button size="sm" className="gap-2" onClick={() => document.getElementById('download')?.scrollIntoView({ behavior: 'smooth' })}>
+            <Button 
+              size="sm" 
+              className="gap-2"
+              variant={shouldUseWhiteText ? "secondary" : "default"}
+              onClick={() => document.getElementById('download')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               <Download className="w-4 h-4" />
               Descargar
             </Button>
@@ -58,7 +80,10 @@ export const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden z-50 p-2 text-gray-600"
+            className={cn(
+              "md:hidden z-50 p-2 transition-colors",
+              shouldUseWhiteText ? "text-white" : "text-gray-600"
+            )}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X /> : <Menu />}

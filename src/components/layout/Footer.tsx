@@ -9,8 +9,12 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="md:col-span-1">
-            <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-4 block">
-              KyPaw
+            <Link to="/" className="mb-1 block">
+              <img 
+                src="/img/logoclaro.png" 
+                alt="KyPaw - Cuida. Organiza. Recuerda." 
+                className="h-16 w-auto"
+              />
             </Link>
             <p className="text-gray-500 text-sm mb-6">
               El mejor compañero para el cuidado de tu mascota. Historial médico, recordatorios y más.
@@ -33,7 +37,6 @@ export const Footer = () => {
             <h3 className="font-semibold text-gray-900 mb-4">KyPaw</h3>
             <ul className="space-y-3">
               <li><a href="/#features" className="text-gray-500 hover:text-primary text-sm">Características</a></li>
-              <li><a href="/#testimonials" className="text-gray-500 hover:text-primary text-sm">Testimonios</a></li>
               <li><a href="/#download" className="text-gray-500 hover:text-primary text-sm">Descargar</a></li>
             </ul>
           </div>
